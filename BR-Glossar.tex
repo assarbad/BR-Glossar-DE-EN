@@ -1,0 +1,176 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = de_DE
+% !TEX TS-program = lualatex
+\documentclass[
+	version=last,
+	paper=a4,
+	fontsize=12pt,
+	parskip=half,
+	twocolumn,
+	DIV=15,
+	footlines=8,
+	headlines=2,
+]{scrartcl}
+\usepackage{scrlayer-scrpage}
+\usepackage{polyglossia}
+\setmainlanguage[spelling=new,variant=german]{german}
+\setotherlanguages{english}
+\usepackage{libertine}
+\usepackage{microtype}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[german=guillemets]{csquotes}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+\usepackage{wasysym}
+
+\definecolor{linkclr}{rgb}{0, 0, 0.7}
+\hypersetup{
+    pdfauthor={Oliver Schneider},
+    pdftitle={Glossar deutsch/englisch für die Betriebsratsarbeit},
+    pdfsubject={Dieses Glossar ist für die Betriebsratsarbeit gedacht; es handelt sich um ein Glossar in dem die deutschen Fachbegriffe den jeweiligen englischen Fachbegriffen oder Erklärungen gegenübergestellt werden.},
+    pdfkeywords={Betriebsrat, Glossar, glossary, works council, German, English, deutsch, englisch}
+	unicode,
+	bookmarksnumbered=false,
+	breaklinks=false,
+	colorlinks=true,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	menucolor=black,
+	urlcolor=linkclr,
+}
+\urlstyle{same}
+
+\setlength{\columnseprule}{0.4pt}
+\clearpairofpagestyles
+\ohead{}
+\chead{Glossar deutsch/englisch für Betriebsratsbegriffe}
+\ihead{}
+\ifoot{}
+\cfoot{}
+\ofoot{}
+
+\setlength{\parindent}{0pt}
+%\usepackage{lua-visual-debug}
+
+\newrobustcmd{\headwordplaceholder}[0]{\varhexagon}
+\newrobustcmd{\glentry}[2]{\item #1:~{\small #2}}
+\newrobustcmd{\deentry}[2]{\glentry{\textbf{#1}}{#2}}
+%\newrobustcmd{\deentry}[2]{\glentry{\textbf{#1}\textsuperscript{de}}{#2}}
+%\newrobustcmd{\enentry}[2]{\glentry{\textbf{#1}\textsuperscript{en}}{#2}}
+\newrobustcmd{\wikip}[0]{\faIcon{wikipedia-w}}
+
+% sub entry types
+\newrobustcmd{\subdeentry}[2]{\hspace*{1.5ex}\parbox{.95\linewidth}{\deentry{\textbf{{\small #1}}}{#2}}}
+\newrobustcmd{\subdeentrypre}[2]{\subdeentry{#1\,\headwordplaceholder}{#2}}
+\newrobustcmd{\subdeentrypost}[2]{\subdeentry{\headwordplaceholder\,#1}{#2}}
+
+\begin{document}
+	\begin{itemize}[label={}]
+		\deentry{Amtszeit}{term (of office)}
+		\deentry{Arbeitgeber}{employer}
+		\deentry{Arbeitszeitreduzierung}{reduction of working hours}
+		\deentry{Aufklärung}{education}
+		\deentry{Aus-, Fort- und Weiterbildung}{education and vocational training}
+
+		\deentry{Ausschuss}{comittee}\\
+		\subdeentrypre{Betriebs}{works -- or plant -- committee}
+		\subdeentrypre{geschäftsführender~}{management committee; Board of Management}
+		\subdeentrypre{Personal}{personnel committee}
+		\subdeentrypre{Wirtschafts}{economic committee}
+
+		\deentry{Belegschaft}{staff}
+
+		\deentry{Beschäftigte}{employees}\\
+		\subdeentry{Beschäftigung}{employment}
+
+		\deentry{Arbeitnehmer}{employee\footnote{well-defined term used in \textsc{Betriebsverfassungsgesetz}}}\\
+		\subdeentrypre{Beteiligung der~}{involvement of employees}
+		\subdeentrypre{ausländische~}{foreign employees}
+		\subdeentrypre{ältere~}{senior employees}
+
+		\deentry{Betriebsrat}{works council\footnote{\wikip~A works council is a shop-floor organization representing workers that functions as a local/firm-level complement to trade unions but is independent of these}}\\
+		\subdeentrypost{/\,Betriebsrätin}{employee representative}
+		\subdeentrypost{smitglied}{member of a works council}
+
+		\deentry{Betriebsvereinbarung}{shop agreement; abbr. BV}\\
+		\subdeentry{IT-Rahmenbetriebsvereinbarung}{\emph{framework} shop agreement regarding IT systems}
+		\subdeentry{Rahmenbetriebsvereinbarung}{\emph{framework} shop agreement}
+
+
+		\deentry{Betriebsversammlung}{workshop meeting}
+		\deentry{Einstellung}{hiring}
+		\deentry{Gerechtigkeit}{equity}
+
+		\deentry{Gesetz}{law}\\
+		\subdeentry{Arbeitsgesetze}{labor legislation}
+		\subdeentrypre{Arbeitsschutz}{occupational safety and health act; labor protection law}
+		\subdeentry{Betriebsverfassungsgesetz}{works constitution act; abbr. BetrVG\footnotemark}\footnotetext[3]{\url{https://en.wikipedia.org/wiki/Works_Constitution_Act}}
+		\subdeentry{Elternzeitgesetze}{parental leave regulations}
+
+		\deentry{Gleichberechtigung}{gender equality}
+		\deentry{Gleichheit, Gleichbehandlung, Gleichstellung}{equality; equal treatment}
+
+		\deentry{Interessenvertretung}{representation of interests}
+		\deentry{Jugendliche}{young people}
+
+		\deentry{Kündigung}{dismissal; redundancy}\\
+		\subdeentrypre{betriebsbedingte~}{lay-off; redundancy}
+		\subdeentrypost{sfrist}{period of notice}
+		\subdeentrypost{sschutz}{dismissal protection; protection against dismissal}
+
+		\deentry{Maßnahmen}{measures}
+		\deentry{Mitarbeiterbezug}{bearing reference to employees}
+
+		\deentry{Mitbestimmung}{co-determination; worker participation\footnote{\url{https://en.wikipedia.org/wiki/Codetermination_in_Germany}}}\\
+		\subdeentrypost{srecht}{right to co-determination}
+
+		\deentry{Mitentscheidung}{codecision}\\
+		\subdeentrypost{sverfahren}{codecision procedure}
+
+		\deentry{Mitwirkung}{participation\footnote{This refers to the works council's right to be informed and consulted by the employer on certain matters. The works council has the right to be heard and provide input, but does not have a decisive vote.}}
+		\deentry{Mutterschutz}{maternity protection}
+		\deentry{Nachrück-Liste}{substitute or replacement list}
+		\deentry{Schulung}{training}
+		\deentry{Schwerbehinderte}{severely handicapped persons}
+		\deentry{Stellenabbau}{lay-off; redundancy}
+
+		\deentry{Stellvertreter/-in}{alternate}\\
+		\subdeentry{stellvertretend}{deputy}
+
+		\deentry{Tagesordnung}{agenda}
+		\deentry{Tarifvertrag}{collective wage agreement}
+		\deentry{Umstrukturierung}{restructuring}
+
+		\deentry{Unfallverhütung}{accident control/prevention}\\
+		\subdeentrypost{svorschriften}{accident prevention regulations}
+
+		\deentry{Urlaubsabbau}{taking accrued vacation}
+		\deentry{Vermittlung}{mediation}
+		\deentry{Verordnung}{directive}
+		\deentry{Versetzung}{transfer}
+		\deentry{Vorsitzende/r}{chair}
+
+		\deentry{Zeiterfassung}{time tracking}\\
+		\subdeentrypre{Arbeits}{working time tracking}
+
+		\deentry{berufliche Aufstiegsmöglichkeiten}{career opportunities}
+
+		\deentry{personenbezogene Daten}{personally identifiable information (PII)}
+		\deentry{regelmäßig}{routinely}
+		\deentry{schutzbedürftige Personen}{vulnerable persons}
+		\deentry{sexuelle Belästigung}{sexual harassment}
+		\deentry{strenge Geheimhaltung}{strict confidentiality}
+		\deentry{untergeordneter Mitarbeiterbezug}{circumstantial reference to employees\footnote{e.g. PII exclusively for authentication and access control}}
+		\deentry{übergeordneter Mitarbeiterbezug}{objective reference to employee PII}
+	\end{itemize}
+
+	\vspace*{3ex}	
+
+	\textsc{Literatur:}\\
+	\enquote{Wortschatz für die Gewerkschaftsarbeit},\\
+	J. Bister \& M. Mansfeld \& C. Parkin,\\
+	Deutscher Gewerkschaftsbund (DGB) Saar
+\end{document}
